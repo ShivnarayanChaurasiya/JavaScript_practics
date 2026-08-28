@@ -1,0 +1,43 @@
+// singleton 
+// object.create
+
+
+// object literrals 
+
+const mySym = Symbol("key1")
+
+
+const JsUser = {
+    name:"Hitesh",
+    age:18,
+    "Full Name":"Hitesh Chaudhary",
+    // mySym:"mykey1", it is not show  data type me symbol
+    [mySym]:"mykey1",
+    email:"hitesh@google.com",
+    isLoggedIn:false,
+    lastLoginDays:["Monday","Saturday"]
+}
+// console.log(JsUser.email)
+// console.log(JsUser["email"])
+// // console.log(JsUser.Full Name)
+// console.log(JsUser["Full Name"])
+// console.log(JsUser[mySym])
+
+JsUser.email ="hitesh@chatgpt.com"
+//Object.freeze(JsUser) //Object.freeze(JsUser) ke baad object ke andar koi new property add, delete ya modify nahi kar sakte.
+JsUser.email="hitesh@microsoft.com"
+// console.log(JsUser);
+
+JsUser.greeting= function(){
+    console.log("hello Js USER");
+}
+
+
+JsUser.greetingTwo= function(){
+    console.log(`hello Js USER ,${this.name}`);
+}
+console.log(JsUser.greeting);
+console.log(JsUser.greetingTwo);
+
+JsUser.greeting();
+JsUser.greetingTwo();
